@@ -23,3 +23,4 @@
    ```
 9. Pop it into the pom.xml file
 10. Make sure to rebuild every time you modify `pom.xml`
+11. Errors should disappear after rebuilding
