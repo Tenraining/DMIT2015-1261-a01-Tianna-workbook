@@ -7,6 +7,9 @@ public class Rectangle {
     private double length;
     private double width;
 
+    public Rectangle(int i, int i1) {
+    }
+
     public double getLength() {
         return length;
     }
@@ -23,11 +26,16 @@ public class Rectangle {
         this.width = width;
     }
 
-    //Define an no-argument constructor
+    //Define a no-argument constructor
 
     public Rectangle() {
         width=1;
         length=1;
+    }
+
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
     }
 
     //Define an instance level to return the area of this circle
