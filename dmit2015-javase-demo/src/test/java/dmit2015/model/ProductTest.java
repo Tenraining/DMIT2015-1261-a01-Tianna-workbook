@@ -6,16 +6,16 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ProductTest {
-
+/*
     @Test
     void when_productIsNullEmptyOrWhitespace()
     {
-        /*
+
         // Arrange
-        Product currentProduct = new Product();
-        */
+        Product currentProduct = new Product(name:"bob", price: -1);
+
     }
-    /*
+
     @Test
     void when_priceLessThanOrEqualToZero()
     {
@@ -23,7 +23,7 @@ class ProductTest {
                 new Product("Price must be greater than 0",-1.49)
         ).isInstanceOf(IllegalArgumentException.class);
     }
-    */
+*/
 }
 
 /*
