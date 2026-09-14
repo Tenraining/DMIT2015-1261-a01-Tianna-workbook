@@ -47,9 +47,27 @@ class ProductTest {
             //""
             //" "
     //For each input, verify that the constructor throws IllegalArgumentException and that the message contains required.
-
+    //– methodName_scenario_expectedBehavior
     @Test
-    void
+    void constructor_whenProductIsWhitespace_shouldThrowException()
+    {
+        assertThatThrownBy(()->
+                new Product("", 0)).isInstanceOf(IllegalArgumentException.class);
+    }
+    @Test
+    void constructor_whenProductIsEmpty_shouldThrowException()
+    {
+        assertThatThrownBy(()->
+                new Product(" ", 0)).isInstanceOf(IllegalArgumentException.class);
+    }
+    @Test
+    void constructor_whenProductIsNull_shouldThrowException()
+    {
+        assertThatThrownBy(()->
+                new Product(null, 0)).isInstanceOf(IllegalArgumentException.class);
+    }
+
+
 
 
 
