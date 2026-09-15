@@ -9,11 +9,19 @@ public class GreetingBean {
 
     //define a field to track the first name
     private String firstName;
-
+    private String lastName;
     //we need to be able to get/set
 
     public String getFirstName() {
         return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public void setFirstName(String firstName) {
@@ -25,9 +33,15 @@ public class GreetingBean {
         if(firstName == null || firstName.isBlank()){
             return "";
         }
-        return "Welcome " + firstName + " to DMIT2015";
+        if (lastName == null || lastName.isBlank())
+        {
+            return "";
+        }
+        return "Welcome " + firstName + " " + lastName  + " to DMIT2015";
         //return String.format("Welcome %s to SMIT2015!", firstName); <- dis one is better
+
     }
+
 }
 
 

@@ -13,8 +13,13 @@
 
             <h:inputText
             value="#{greetingBean.firstName}"/>
+            <h:inputText
+                value="#{greetingBean.lastName}" />
+
+
             <h:commandButton
-                value="Submit" />
+                value="Submit"
+                update = "@form"/>
 
             <br />
             <br />
@@ -23,6 +28,7 @@
                     value="#{greetingBean.greetingMessage}"/>
 
         </h:form>
+        <h:outputText value="Apache Tomcat + Jakarta Faces" />
     </h:body>
 
 </html>
