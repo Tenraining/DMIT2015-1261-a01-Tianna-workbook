@@ -12,9 +12,11 @@
         <h:messages />
 
             <h:inputText
-            value="#{greetingBean.firstName}"/>
+            value="#{greetingBean.firstName}"
+            placeholder="Enter your first name" />
             <h:commandButton
-                value="Submit" />
+                value="Submit"
+                update="@form"/>
 
             <br />
             <br />

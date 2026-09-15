@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.within;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class ProductTest {
 
@@ -49,16 +50,24 @@ class ProductTest {
     //For each input, verify that the constructor throws IllegalArgumentException and that the message contains required.
     //– methodName_scenario_expectedBehavior
     @Test
-    void constructor_whenProductIsWhitespace_shouldThrowException()
-    {
-        assertThatThrownBy(()->
-                new Product("", 0)).isInstanceOf(IllegalArgumentException.class);
-    }
-    @Test
     void constructor_whenProductIsEmpty_shouldThrowException()
     {
         assertThatThrownBy(()->
-                new Product(" ", 0)).isInstanceOf(IllegalArgumentException.class);
+                new Product("", 0))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("required");
+    }
+    @Test
+    void constructor_whenProductIsWhitespace_shouldThrowException()
+    {
+        //arrange
+        String invalidName = " ";
+        double validPrice = 100;
+        //act
+        //assert
+        assertThatThrownBy(() ->new Product(invalidName, validPrice))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("required");
     }
     @Test
     void constructor_whenProductIsNull_shouldThrowException()
@@ -68,9 +77,21 @@ class ProductTest {
     }
 
 
+    //Test 5 — Verify Invalid Price
+    //Test both 0 and -5 with a valid name of "Laptop". For each input,
+    // verify that the constructor throws IllegalArgumentException and that the message contains greater than 0.
 
-
-
+    @Test
+    void constructor_whenPriceIsNegative_shouldThrowIllegalArgumentException()
+    {
+        //arrange
+        //Product currentProduct = new Product("Laptop", -5);
+        //Act
+        //double actualPrice = currentProduct.getPrice();
+        //assert
+        assertThatThrownBy(()-> new Product("Laptop", -5))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
 
     /*
     @Test
